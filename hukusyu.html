@@ -5,33 +5,31 @@
   <link rel="stylesheet" type="text/css" href="c.css" />
 </head>
 <body>
-<id="top"><h2>復習モード</h2>
-<div>モードを選択してください</div>
+<id="top"><h2>Review Mode</h2>
+<div>Select a mode</div>
 
 <div id="ej">
-<input type="button"class="square_btn" value="英語→日本語復習モード" style="WIDTH:200px;height:50px"
+<input type="button"class="square_btn" value="English to Japanese" style="WIDTH:200px;height:50px"
    onClick="document.getElementById('ej').style.display='none';
             document.getElementById('je').style.display='none';
             document.getElementById('ej_s').style.display='block'">
 </div>
 <div id="je">
-  <input type="button"class="square_btn" value="日本語→英語復習モード" style="WIDTH:200px;height:50px"
+  <input type="button"class="square_btn" value="Japanese to English" style="WIDTH:200px;height:50px"
      onClick="document.getElementById('je').style.display='none';
               document.getElementById('ej').style.display='none';
               document.getElementById('je_s').style.display='block'">
   </div>
 
-
-<!--時間を指定しないstatボタン-->
 <div id="ej_s" style="display:none">
-<p><input type="button" class="push_btn" value="英語→日本語復習モード" style="WIDTH:200px;height:50px"
+<p><input type="button" class="push_btn" value="English to Japanese" style="WIDTH:200px;height:50px"
    onClick="window.location.reload();'"></p>
 <form method="post" action="tango_ej.php">
   <input type="submit" class="square_btn" value="START!">
 </form>
 </div>
 <div id="je_s" style="display:none">
-<p><input type="button" class="push_btn" value="日本語→英語復習モード" style="WIDTH:200px;height:50px"
+<p><input type="button" class="push_btn" value="English to Japanese" style="WIDTH:200px;height:50px"
    onClick="window.location.reload();'"></p>
    <input type="hidden" name="lasteng" value=" ">
    <input type="hidden" name="lastjap" value=" ">
@@ -45,7 +43,7 @@
 
 
 <br><br><br>
-<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back to Menu">
 
 
 </body>

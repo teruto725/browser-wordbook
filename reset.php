@@ -12,8 +12,8 @@ session_check();
 </head>
 <body>
 
-<id="top"><h2>編集モード</h2>
-<p>単語難易度をリセットしました</p>
+<id="top"><h2>Edit Mode</h2>
+<p>All Word difficulty level has been reset</p>
 <?php
 
   #リセット
@@ -29,11 +29,11 @@ session_check();
 	<br>
 	<br>
 	<br>
-	<input type="button"class="square_btn" onclick="location.href='./reset.php'" value="単語難易度をリセットする">
+	<input type="button"class="square_btn" onclick="location.href='./reset.php'" value="Reset All Difficulty Level">
 	<br>
 	<br>
 	<br>
-	<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+	<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 
 
 </body>

@@ -11,7 +11,7 @@ session_check();
 	  <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="c.css">
 		<body>
-		<id="top"><h2>編集モード</h2>
+		<id="top"><h2>Edit Mode</h2>
 <?php
 $link = new mysqli("157.112.147.201", "teruto725_d","teruto725", "teruto725_tango");
 $link->set_charset('utf8');
@@ -39,11 +39,11 @@ edit_table();
 ?>
 <br>
 <br>
-<input type="button"class="square_btn" onclick="location.href='./reset.php'" value="すべての単語難易度をリセットする">
+<input type="button"class="square_btn" onclick="location.href='./reset.php'" value="Reset All Difficulty Level">
 <br>
 <br>
 <br>
-<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+<input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 
 </body>
 </html>

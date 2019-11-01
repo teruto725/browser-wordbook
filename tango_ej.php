@@ -22,6 +22,6 @@ print_button_ej($lastword);//ボタン部分表示
 </body>
 <body>
 	<br><br><br>
- <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+ <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 </body>
 </html>

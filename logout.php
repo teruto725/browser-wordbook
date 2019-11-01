@@ -11,16 +11,16 @@ ini_set('display_errors', 0);
 	  <link rel="stylesheet" type="text/css" href="c.css" />
 </head>
 <body>
-  <h2>ログアウト</h2><br>
+  <h2>Logout</h2><br>
 <?php
 if (isset($_SESSION["USERNAME"])) {
-  echo 'Logoutしました。<br>お疲れ様です';
+  echo 'Successfully Logout!';
 } else {
-  echo 'Logoutしました。<br>お疲れ様です';
+  echo 'Successfully Logout!';
 }
 echo <<<EOH
 <br><br>
-<input type="button" class="square_btn2" onclick="location.href='./menu.php'" value="ログイン画面に戻る">
+<input type="button" class="square_btn2" onclick="location.href='./menu.php'" value="Back to Login Page">
 EOH;
 //セッション変数のクリア
 $_SESSION = array();

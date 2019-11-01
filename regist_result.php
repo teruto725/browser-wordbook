@@ -4,10 +4,10 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <link rel="stylesheet" href="c.css">
-   <title>Regist</title>
+   <title>Account Registration</title>
  </head>
  <body>
-   	<id="top"><h2>アカウント登録</h2>
+   	<id="top"><h2>Account Registration</h2>
 <?php
 require_once('config.php');
 //データベースへ接続、テーブルがない場合は作成
@@ -30,10 +30,10 @@ $username = $_POST['username'];
 if (preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i', $_POST['password'])) {
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 } else {
-  echo 'パスワードは半角英数字をそれぞれ1文字以上含んだ8文字以上で設定してください。';
+  echo 'Set the password using at least 8 characters including 1 or more half-width alphanumeric characters.';
   print <<<EOH
   <br>
-  <input type="button"class="square_btn2" onclick="location.href='./regist.php'" value="アカウント登録ページに戻る">
+  <input type="button"class="square_btn2" onclick="location.href='./regist.php'" value="Back to Account Registration Page">
 EOH;
   return false;
 }
@@ -41,16 +41,17 @@ EOH;
 try {
   $stmt = $pdo->prepare("insert into userDeta(username, password) value(?, ?)");
   $stmt->execute([$username, $password]);
-  echo '登録完了！';
+  echo 'Registered correctly!';
   print <<<EOH
   <br>
-  <input type="button"class="square_btn2" onclick="location.href='./login.html'" value="ログインページはこちら">
+  Press the button below to log in.
+  <input type="button"class="square_btn2" onclick="location.href='./login.html'" value="Go to Login Page">
 EOH;
 } catch (\Exception $e) {
-  echo 'そのユーザ名は既に使用されています。';
+  echo 'The username is already in use.';
   print <<<EOH
   <br>
-  <input type="button"class="square_btn2" onclick="location.href='./regist.php'" value="アカウント登録ページに戻る">
+  <input type="button"class="square_btn2" onclick="location.href='./regist.php'" value="Back to Account Registration Page">
 EOH;
 }
 ?>

@@ -13,7 +13,7 @@ ini_set('display_errors', 0);
    <title>Login</title>
  </head>
  <body>
-   <h2>ログイン</h2><br>
+   <h2>Login</h2><br>
 <?php
 //DB内でPOSTされたメールアドレスを検索
 try {
@@ -26,9 +26,9 @@ try {
 }
 //emailがDB内に存在しているか確認
 if (!isset($row['username'])) {
-  echo 'そのユーザは登録されていません';
+  echo 'Incorrect Username';
   print <<<EOH
-  <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="ログイン画面に戻る">;
+  <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back to Menu">;
 EOH;
   return false;
 }
@@ -36,18 +36,16 @@ EOH;
 if (password_verify($_POST['password'], $row['password'])) {
   session_regenerate_id(true); //session_idを新しく生成し、置き換える
   $_SESSION['USERNAME'] = $row['username'];
-  echo "ようこそ！{$_SESSION['USERNAME']}さん";
-  echo '<br>';
-  echo 'ログインしました';
+  echo "Welcome {$_SESSION['USERNAME']}!";
   echo '<br>';
   print <<<EOH
-  <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+  <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Go to Menu">
 EOH;
 
 } else {
   echo 'パスワードが間違っています。';
   print <<<EOH
-   <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="ログイン画面に戻る">
+   <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back to Login Page">
 EOH;
   return false;
 }

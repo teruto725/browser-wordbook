@@ -23,13 +23,13 @@ echo "</div>";
 
 //正解不正解判定
 if($_POST['lasteng'] == $_POST['ans']){
-  echo "正解！<br>";
+  echo "GOOD！<br>";
   diff_ok($lastword);
 }
 else {
-  echo "不正解！<br>";
-  echo "あなたの答え:{$_POST['ans']}<br>";
-  echo "正解の答え　:{$_POST['lasteng']}<br>";
+  echo "BAD！<br>";
+  echo "Your answer:{$_POST['ans']}<br>";
+  echo "Correct answer　:{$_POST['lasteng']}<br>";
   diff_bad($lastword);
 }
 print <<<EOH
@@ -39,13 +39,13 @@ print <<<EOH
 EOH;
 echo "<input type=\"hidden\" name=\"lasteng\" value=\"" . $lastword['eng']. "\">";
 echo "<input type=\"hidden\" name=\"lastjap\" value=\"" . $lastword['jap']. "\">";
-echo "<input type=\"submit\" class=\"square_btn\" value=\"次の問題\">";
+echo "<input type=\"submit\" class=\"square_btn\" value=\"Next!\">";
 echo "</form>";
 
 ?>
 </body>
 <body>
 	<br><br><br>
- <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+ <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 </body>
 </html>

@@ -23,18 +23,18 @@ echo "</div>";
 print <<<EOH
 <br><br>
 <form  action="tango_je_result.php" method="post">
-  <label for="ans">スペル</label>
+  <label for="ans">English Spell</label>
 	<input type="ans" name="ans">
   <br><br>
 EOH;
 echo "<input type=\"hidden\" name=\"lasteng\" value=\"" . $word['eng']. "\">";
 echo "<input type=\"hidden\" name=\"lastjap\" value=\"" . $word['jap']. "\">";
-echo "<input type=\"submit\" class=\"square_btn\" value=\"答え合わせ\">";
+echo "<input type=\"submit\" class=\"square_btn\" value=\"Check!\">";
 echo "</form>"
 ?>
 </body>
 <body>
 	<br><br><br>
- <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+ <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 </body>
 </html>

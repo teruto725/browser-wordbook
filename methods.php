@@ -11,21 +11,7 @@ function session_check(){
   }
 }
 
-//timer表示
-function print_timer($time){
-  		echo "残り時間";
-  		echo "<div class='timer' data-minutes-left=\"" . $time . "\"></div>";
-  		echo "</body>";
-  		echo "<body>";
-}
 
-//timer表示（秒を入力）
-function print_timer_s($time){
-  echo "残り時間";
-  echo "<div class='timer' data-seconds-left=\"" . $time . "\"></div>";
-  echo "</body>";
-  echo "<body>";
-}
 
 //難易度変更（ok)
 function diff_ok($lastword){
@@ -53,7 +39,7 @@ function diff_ok($lastword){
 	$sql = 'UPDATE tango SET difficult=' . $df .  ' WHERE english=\'' . $lastword['eng'] . '\' AND username = \'' . $_SESSION['USERNAME'] .'\'' ;
 	$result = mysqli_query($link, $sql);
   if( !mysqli_close($link) ) {
-    error('切断に失敗しました。');
+    error('Error of database');
   }
 }
 
@@ -196,13 +182,13 @@ function edit_table(){
   if (!$result) {
   	echo "SQL ERROR";
   }
-  print ("・登録単語一覧");
+  print ("・All Registration Word");
   print "<form action=\"edit.php\" method=\"post\">";
   $count = 0;
   print <<<EOH
   <body>
   <table class="memberTable" id="memberTable" >
-  <tr><th>編集</th><th>英語</th><th>日本語</th><th>難易度</th><th>削除</th></tr>
+  <tr><th>Edit</th><th>English</th><th>Japanese</th><th>Difficulty</th><th>Remove</th></tr>
 EOH;
 
   while ($row = mysqli_fetch_assoc($result)){
@@ -229,10 +215,10 @@ EOH;
   echo "</table>";
 
   echo "<input type=\"hidden\" name=\"count\" value=\"$count\">";
-  echo "<input type=\"submit\" class=\"square_btn\" value=\"変更を反映\">";
+  echo "<input type=\"submit\" class=\"square_btn\" value=\"Reflect changes\">";
   echo "</body></form>";
   	if( !mysqli_close($link) ) {
-  		error('切断に失敗しました。');
+  		error('Database Error');
   	}
 }
 ?>

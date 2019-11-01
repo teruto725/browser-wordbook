@@ -69,14 +69,14 @@ function print_all(){
 	$sql = "SELECT english,japanese,difficult,count,username FROM tango where username = '$user' ORDER BY english asc ";
 	$result = mysqli_query($link, $sql);
 	if (!$result) {
-		error('SELECTクエリに失敗しました。<br>SQL文：'.$sql.'<br>'.mysqli_error($link));
+		error('Sql Error<br>SQL：'.$sql.'<br>'.mysqli_error($link));
 	}
-	print ("登録単語一覧");
+	print ("List of registered words");
 	echo "<TABLE border='1' >";
 	echo "<TR>";
-	echo "<TD>英語";
+	echo "<TD>English";
 	echo "</TD>";
-	echo "<TD>日本語";
+	echo "<TD>Japanese";
 	echo "</TD>";
 	echo "</TR>";
 	while ($row = mysqli_fetch_assoc($result)){//１ループで１行データが取り出され、データが無くなるとループを抜けます。
@@ -89,12 +89,12 @@ function print_all(){
 	}
 	echo "</TABLE>";
 	if( !mysqli_close($link) ) {
-		error('切断に失敗しました。');
+		error('Database error');
 	}
 }
 ?>
 </body>
 <body>
- <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="メニューに戻る">
+ <input type="button"class="square_btn2" onclick="location.href='./menu.php'" value="Back To Menu">
 </body>
 </html>
